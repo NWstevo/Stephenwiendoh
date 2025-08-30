@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey Form</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background-color: rgb(146, 98, 98);
+            color: rgb(16, 16, 62);
+        }
+        
+        #title {
+            text-align: center;
+        }
+        
+        #description {
+            text-decoration: solid;
+            font-size: large;
+        }
+        
+        form {
+            font-size: 16px;
+            display: block;
+            border: 2px solid #000000;
+            margin: 10px auto;
+            padding: 5px 5px;
+            box-shadow: 5px 5px 0.7rem black;
+        }
+        
+        #number #personal {
+            display: block;
+            text-align: left;
+            align-items: center;
+            width: 100%;
+        }
+        
+        #name,
+        #email,
+        #number {
+            font-family: Arial, Helvetica, sans-serif;
+            width: 98%;
+            height: 20px;
+            color: white;
+            align-items: center;
+            background-color: rgb(99, 80, 82);
+        }
+        
+        input::placeholder {
+            color: rgb(222, 238, 255);
+        }
+        
+        #dropdown {
+            margin-top: 15px;
+            margin-bottom: 15px;
+            color: rgb(255, 255, 255);
+            background-color: rgb(0, 0, 0);
+        }
+        
+        .topics label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        
+        .topics {
+            border-color: rgb(48, 10, 14);
+        }
+        
+        textarea {
+            width: 95%;
+            margin-right: 5px;
+            margin-left: 5px;
+            margin-bottom: 5px;
+            margin-top: 0px;
+            border: 2px solid rgb(48, 10, 14);
+        }
+        
+        #decision {
+            margin-top: 15px;
+            border-color: rgb(48, 10, 14);
+        }
+        
+        footer {
+            display: block;
+        }
+        
+        #submit {
+            align-items: center;
+            border: 2px solid rgb(48, 10, 14);
+            border-radius: 5px;
+            width: 75px;
+            height: 25px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id="title">Customer Service Experience survey form</h1>
+    <p id="description">We value your feedback</p>
+    <form id="survey-form" action="" method="post">
+        <section id="personal">
+            <label for="name" id="name-label">Name: <input id="name" type="text" placeholder="Enter your name" required></label>
+            <label for="email" id="email-label">Email: <input type="email" id="email" placeholder="Enter your email" required></label>
+            <label for="number" id="number-label">Age (optional): <input type="number" required name="Age" placeholder="Enter your age" id="number" min="1" max="150"></label>
+
+            <select id="dropdown">
+                <option value="">Select your Gender</option>
+                <option value="1">Male</option>
+                <option value="2">Female</option>
+                <option value="3">Other</option>
+            </select>
+
+        </section>
+
+        <fieldset class="topics">
+            <p>Which of the following topics align with your request? <br>(Tick all that apply)</p>
+            <label for="account"><input type="checkbox" id="account" name="topics" value="account"> Account and Billing
+            </label>
+            <label for="product"><input type="checkbox" id="product" name="topics" value="product"> Product and Service Inquiries
+            </label>
+            <label for="technical"><input type="checkbox" id="technical" name="topics" value="technical"> Technical Support
+            </label>
+            <label for="returns"><input type="checkbox" id="returns" name="topics" value="returns"> Returns, Exchange, and Refund
+            </label>
+            <label for="loyalty"><input type="checkbox" id="loyalty" name="topics" value="loyalty"> Loyalty Programs and Discounts
+            </label>
+        </fieldset>
+
+        <fieldset id="decision">
+            <legend>How would you rate our customer services</legend>
+            <input name="choice" type="radio" value="excellent">Excellent</input>
+            <input name="choice" type="radio" value="Good">Good</input>
+            <input name="choice" type="radio" value="Neutral">Neutral</input>
+            <input name="choice" type="radio" value="Poor">Poor</input>
+            <input name="choice" type="radio" value="Very Poor">very Poor</input>
+        </fieldset>
+
+        <footer>
+            <p>How can we better our services</p>
+            <textarea cols="50" rows="6" placeholder="Enter your comments here..."></textarea>
+
+            <button id="submit" type="submit">Submit</button>
+        </footer>
+
+    </form>
+</body>
+
+</html>
